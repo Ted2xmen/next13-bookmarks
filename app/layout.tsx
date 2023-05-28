@@ -1,9 +1,7 @@
-import Header from "./(useClient)/Header";
-import Logo from "./(useClient)/Logo";
 import Navigation from "./(useClient)/Navigation";
-import Search from "./(useClient)/Search";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Header from "./(useClient)/Navigation/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,15 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <div className="max-w-7xl mx-auto h-screen space-y-8 pt-24 px-2">
-          <div className="flex justify-between items-center">
-            <Navigation />
-            <Logo />
-            <Search />
-          </div>
-          <Header />
+    <html className={inter.className} lang="en">
+      <body className="bg-slate-300 mx-6 m-3 lg:mx-12 lg:p-6">
+        <div className="flex max-w-7xl mx-auto space-x-2 items-center mt-4">
+          <Navigation />
+        </div>
+        <Header />
+        <div className="p-5 mt-8 lg:mt-32 bg-slate-200 max-w-7xl min-h-screen mx-auto rounded-lg">
           {children}
         </div>
       </body>
